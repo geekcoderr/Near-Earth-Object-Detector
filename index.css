@@ -36,17 +36,17 @@ body{
 
 @keyframes blink-text {
     50% {
-     background-color: orangered;
-     color: #292F36;
+     /* background-color: orangered; */
+     color: greenyellow;
      border:none;
-    
+        
     }
     100% {
-     background-color: #292F36;
+     /* background-color: #292F36; */
      border: none;
      color: orangered;
-
     }
+    
 }
 .infotext{
     margin: 0;
