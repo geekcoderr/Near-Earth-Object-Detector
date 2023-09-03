@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,11 +9,45 @@
     <script src="./index.js"></script>
     <link rel="stylesheet" type="text/css" href="./index.css">
 </head>
+
 <body>
-    <div class="center"><center> <p class="infotext" ><CODE>Console Under Development!</CODE><br>
-        <CODE style="font-size: 17px;color: #8878BF;">Temporarily Data Unavilable!</CODE></p></center>
+    <div class="center">
+        <center>
+            <p class="infotext"><CODE>Console Under Development!</CODE><br>
+                <CODE style="font-size: 17px;color: #8878BF;">Temporarily Data Unavilable!</CODE>
+            </p>
+        </center>
+    </div>
+    <div class="parent">
+        <div class="child">
+        </div>
     </div>
     <!-- <div class="navbar-left"></div>
     <div class="pannel-right"></div> -->
 </body>
+
+<script>
+    const parentDivs = document.querySelectorAll('.parent');
+
+    function changeDivProperties(event) {
+        parentDivs.forEach(div => {
+            const newWidth = getRandomSize();
+            const newHeight = getRandomSize();
+            const newRotation = getRandomRotation();
+            div.style.width = newWidth + 'px';
+            div.style.height = newHeight + 'px';
+            div.style.transform = `rotate(${newRotation}deg)`;
+        });
+    }
+    parentDivs.forEach(div => {
+        setInterval(function () { changeDivProperties() }, 1000);
+    });
+    function getRandomSize() {
+        return Math.floor(Math.random() * 200) + 150;
+    }
+    function getRandomRotation() {
+        return Math.floor(Math.random() * 500);
+    }
+</script>
+
 </html>

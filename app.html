@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doratating</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            background-color: #221B15;
+            margin: 0;
+            height: 100vh;
+        }
+
+        .parent {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 300px;
+            height: 300px;
+            background-color: #FFB30D;
+            border-radius: 10px;
+            margin: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            padding: 10px;
+        }
+
+        .child {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            background-repeat: no-repeat;
+            background-size: cover;
+            /* background-attachment: fixed; */
+            width: 90%;
+            height: 90%;
+            background-color: antiquewhite;
+            background-color: #E4EBF2;
+            background-color: tomato;
+            border-radius: 20px;
+            background-image: url('../Downloads/34988-3-doraemon-photo.png');
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parent">
+        <div class="child">
+            <audio src="../Downloads/Doremon Musical Sound ! Doraemon.mp3" loop="loop" autoplay></audio>
+        </div>
+    </div>
+
+    <script>
+        const parentDivs = document.querySelectorAll('.parent');
+
+        function changeDivProperties(event) {
+            parentDivs.forEach(div => {
+                const newWidth = getRandomSize();
+                const newHeight = getRandomSize();
+                const newRotation = getRandomRotation();
+                div.style.width = newWidth + 'px';
+                div.style.height = newHeight + 'px';
+                div.style.transform = `rotate(${newRotation}deg)`;
+            });
+        }
+        parentDivs.forEach(div => {
+            setInterval(function () { changeDivProperties() }, 1000);
+        });
+        function getRandomSize() {
+            return Math.floor(Math.random() * 200) + 200;
+        }
+        function getRandomRotation() {
+            return Math.floor(Math.random() * 500);
+        }
+    </script>
+</body>
+
+</html>
