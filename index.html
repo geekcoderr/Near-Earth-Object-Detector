@@ -22,6 +22,24 @@
         <div class="child">
         </div>
     </div>
+    <audio id="backgroundMusic" src="../../Downloads/Doremon Musical Sound ! Doraemon.mp3" loop muted></audio>
+    <script>
+        let audioPlaying = false; // Flag to track if audio is already playing
+
+        // Function to play the background music
+        function playBackgroundMusic() {
+            if (!audioPlaying) {
+                const audio = document.getElementById('backgroundMusic');
+                audio.play();
+                audioPlaying = true;
+            }
+        }
+
+        // Add a mousemove event listener to the document
+        document.addEventListener('mousemove', playBackgroundMusic);
+    </script>
+
+
     <!-- <div class="navbar-left"></div>
     <div class="pannel-right"></div> -->
 </body>
@@ -43,7 +61,7 @@
         setInterval(function () { changeDivProperties() }, 1000);
     });
     function getRandomSize() {
-        return Math.floor(Math.random() * 200) + 150;
+        return Math.floor(Math.random() * 100) + 150;
     }
     function getRandomRotation() {
         return Math.floor(Math.random() * 500);
