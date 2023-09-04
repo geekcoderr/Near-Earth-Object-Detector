@@ -8,6 +8,8 @@ body {
     background-size: cover;
     background-attachment: fixed;
     background-color: #221B15;
+    background-image: url('./Black.png');
+    background-position: center;
     margin: 0;
     /* Remove default body margin */
     height: 100vh;
